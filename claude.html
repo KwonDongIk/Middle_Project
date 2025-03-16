@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>허위딜러 - 중고차 거래 사이트</title>
+    <style>
+        /* 폰트 적용 */
+        @font-face {
+            font-family: 'SDSamliphopangche_Outline';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/SDSamliphopangche_Outline.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        
+        /* 전체 스타일 리셋 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* 헤더 스타일 */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            font-family: 'SDSamliphopangche_Outline', sans-serif;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-item:hover {
+            color: #888;
+        }
+
+        .user-menu {
+            display: flex;
+            gap: 15px;
+        }
+
+        .user-menu button {
+            padding: 6px 15px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            background: #fff;
+            font-size: 0.875rem;
+            cursor: pointer;
+        }
+
+        .user-menu button:hover {
+            background: #f7f7f7;
+        }
+
+        /* 메인 컨텐츠 스타일 */
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        .search-section {
+            width: 100%;
+            max-width: 800px;
+            margin-bottom: 50px;
+        }
+
+        .search-title {
+            font-size: 1.75rem;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .search-input-container {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 12px 40px 12px 15px;
+            border: none;
+            border-bottom: 2px solid #ddd;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .search-input:focus {
+            border-color: #6366f1;
+        }
+
+        .search-icon {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #888;
+        }
+
+        .search-filter {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            border: none;
+            background: none;
+            color: #666;
+            position: relative;
+        }
+
+        .tab.active {
+            color: #6366f1;
+            font-weight: 500;
+        }
+
+        .tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #6366f1;
+        }
+
+        .search-fields {
+            margin-top: 20px;
+        }
+
+        .field-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .field {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .field-label {
+            font-size: 0.875rem;
+            color: #777;
+            margin-bottom: 5px;
+        }
+
+        .field-select {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .car-type-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .car-type-button {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding: 8px 20px;
+            border-radius: 20px;
+            border: 1px solid #ddd;
+            background: none;
+            cursor: pointer;
+        }
+
+        .car-type-button:hover {
+            border-color: #6366f1;
+        }
+
+        .car-type-button.active {
+            border-color: #6366f1;
+            color: #6366f1;
+        }
+
+        .search-button {
+            width: 100%;
+            padding: 12px;
+            background: #000;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .search-button:hover {
+            background: #222;
+        }
+
+        /* 인기 차량 슬라이더 스타일 */
+        .popular-cars-section {
+            width: 100%;
+            max-width: 1000px;
+            background: #f7f7f7;
+            border-radius: 10px;
+            padding: 25px;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        .slider-container {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slider-wrapper {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .slider-item {
+            min-width: 100%;
+            display: flex;
+            gap: 20px;
+        }
+
+        .car-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            width: 100%;
+        }
+
+        .car-card {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .car-image {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+        }
+
+        .car-details {
+            padding: 15px;
+        }
+
+        .car-name {
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .car-price {
+            font-size: 1.125rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .car-info {
+            font-size: 0.75rem;
+            color: #777;
+        }
+
+        .slider-control {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #fff;
+            border: none;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+        }
+
+        .prev-button {
+            left: 10px;
+        }
+
+        .next-button {
+            right: 10px;
+        }
+
+        /* 푸터 스타일 */
+        footer {
+            background: #fff;
+            border-top: 1px solid #e5e5e5;
+            padding: 25px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .company-info {
+            font-size: 0.875rem;
+            color: #777;
+        }
+
+        .copyright {
+            font-size: 0.875rem;
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+    <!-- 헤더 영역 -->
+    <header>
+        <div class="logo">허위딜러</div>
+        <div class="nav-menu">
+            <a href="#" class="nav-item">내차사기</a>
+            <a href="#" class="nav-item">국산</a>
+            <a href="#" class="nav-item">수입</a>
+            <a href="#" class="nav-item">전기</a>
+            <a href="#" class="nav-item">내차팔기</a>
+            <a href="#" class="nav-item">비교견적</a>
+            <a href="#" class="nav-item">직거래</a>
+        </div>
+        <div class="user-menu">
+            <button>로그인</button>
+            <button>회원가입</button>
+        </div>
+    </header>
+
+    <!-- 메인 컨텐츠 영역 -->
+    <main>
+        <!-- 검색 섹션 -->
+        <section class="search-section">
+            <h1 class="search-title">어떤 차를 찾으시나요?</h1>
+            
+            <div class="search-input-container">
+                <input type="text" class="search-input" placeholder="차종, 모델명으로 검색">
+                <div class="search-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15.5 14H14.71L14.43 13.73C15.41 12.59 16 11.11 16 9.5C16 5.91 13.09 3 9.5 3C5.91 3 3 5.91 3 9.5C3 13.09 5.91 16 9.5 16C11.11 16 12.59 15.41 13.73 14.43L14 14.71V15.5L19 20.49L20.49 19L15.5 14ZM9.5 14C7.01 14 5 11.99 5 9.5C5 7.01 7.01 5 9.5 5C11.99 5 14 7.01 14 9.5C14 11.99 11.99 14 9.5 14Z" fill="#888888"/>
+                    </svg>
+                </div>
+            </div>
+            
+            <div class="search-filter">
+                <!-- 탭 메뉴 -->
+                <div class="tabs">
+                    <button class="tab active" data-tab="direct">직접 찾기</button>
+                    <button class="tab" data-tab="price">가격으로 찾기</button>
+                    <button class="tab" data-tab="type">차종으로 찾기</button>
+                </div>
+                
+                <!-- 검색 필드 컨테이너 -->
+                <div id="searchFields" class="search-fields">
+                    <!-- 기본으로 직접 찾기 필드 표시 -->
+                    <div class="field-row">
+                        <div class="field">
+                            <label class="field-label">제조사</label>
+                            <select class="field-select">
+                                <option>선택하세요</option>
+                                <option>현대</option>
+                                <option>기아</option>
+                                <option>쌍용</option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label class="field-label">모델</label>
+                            <select class="field-select">
+                                <option>선택하세요</option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label class="field-label">세부모델</label>
+                            <select class="field-select">
+                                <option>선택하세요</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="search-button">검색하기</button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 인기 차량 슬라이더 섹션 -->
+        <section class="popular-cars-section">
+            <h2 class="section-title">실시간 조회수 많은 차량</h2>
+            <div class="slider-container">
+                <div class="slider-wrapper" id="carSlider">
+                    <!-- 첫 번째 슬라이드 -->
+                    <div class="slider-item">
+                        <div class="car-grid">
+                            <div class="car-card">
+                                <img src="/api/placeholder/400/300" alt="현대 쏘나타" class="car-image">
+                                <div class="car-details">
+                                    <h3 class="car-name">현대 쏘나타 디 엣지</h3>
+                                    <p class="car-price">3,500,000원</p>
+                                    <p class="car-info">23년 2월등록 | 15,000km | 가솔린</p>
+                                </div>
+                            </div>
+                            <div class="car-card">
+                                <img src="/api/placeholder/400/300" alt="기아 스포티지" class="car-image">
+                                <div class="car-details">
+                                    <h3 class="car-name">기아 더 올 뉴 스포티지</h3>
+                                    <p class="car-price">3,000,000원</p>
+                                    <p class="car-info">21년 2월등록 | 26,000km | 가솔린 LPG</p>
+                                </div>
+                            </div>
+                            <div class="car-card">
+                                <img src="/api/placeholder/400/300" alt="현대 캐스퍼" class="car-image">
+                                <div class="car-details">
+                                    <h3 class="car-name">현대 캐스퍼</h3>
+                                    <p class="car-price">1,500,000원</p>
+                                    <p class="car-info">22년 4월등록 | 28,000km | 가솔린</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 두 번째 슬라이드 -->
+                    <div class="slider-item">
+                        <div class="car-grid">
+                            <div class="car-card">
+                                <img src="/api/placeholder/400/300" alt="기아 K5" class="car-image">
+                                <div class="car-details">
+                                    <h3 class="car-name">기아 K5</h3>
+                                    <p class="car-price">2,800,000원</p>
+                                    <p class="car-info">22년 6월등록 | 22,000km | 가솔린</p>
+                                </div>
+                            </div>
+                            <div class="car-card">
+                                <img src="/api/placeholder/400/300" alt="현대 팰리세이드" class="car-image">
+                                <div class="car-details">
+                                    <h3 class="car-name">현대 팰리세이드</h3>
+                                    <p class="car-price">4,500,000원</p>
+                                    <p class="car-info">21년 5월등록 | 31,000km | 디젤</p>
+                                </div>
+                            </div>
+                            <div class="car-card">
+                                <img src="/api/placeholder/400/300" alt="기아 셀토스" class="car-image">
+                                <div class="car-details">
+                                    <h3 class="car-name">기아 셀토스</h3>
+                                    <p class="car-price">2,200,000원</p>
+                                    <p class="car-info">22년 1월등록 | 18,000km | 가솔린</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 슬라이더 컨트롤 버튼 -->
+                <button class="slider-control prev-button" id="prevButton">←</button>
+                <button class="slider-control next-button" id="nextButton">→</button>
+            </div>
+        </section>
+    </main>
+    
+    <!-- 푸터 영역 -->
+    <footer>
+        <div class="footer-content">
+            <div class="logo">허위딜러</div>
+            <div class="company-info">대구광역시 중구 중앙대로 403</div>
+            <div class="company-info">TEL: 053-000-0000</div>
+        </div>
+        <div class="copyright">Copyright 2025. 허위딜러 All rights reserved.</div>
+    </footer>
+
+    <script>
+        // 검색 필드 탭 전환 기능
+        const tabs = document.querySelectorAll('.tab');
+        const searchFields = document.getElementById('searchFields');
+        
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // 활성 탭 업데이트
+                tabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                
+                // 선택된 탭에 따라 검색 필드 변경
+                const tabType = tab.dataset.tab;
+                
+                if (tabType === 'direct') {
+                    searchFields.innerHTML = `
+                        <div class="field-row">
+                            <div class="field">
+                                <label class="field-label">제조사</label>
+                                <select class="field-select">
+                                    <option>선택하세요</option>
+                                    <option>현대</option>
+                                    <option>기아</option>
+                                    <option>쌍용</option>
+                                </select>
+                            </div>
+                            <div class="field">
+                                <label class="field-label">모델</label>
+                                <select class="field-select">
+                                    <option>선택하세요</option>
+                                </select>
+                            </div>
+                            <div class="field">
+                                <label class="field-label">세부모델</label>
+                                <select class="field-select">
+                                    <option>선택하세요</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button class="search-button">검색하기</button>
+                    `;
+                } else if (tabType === 'price') {
+                    searchFields.innerHTML = `
+                        <div class="field-row">
+                            <div class="field">
+                                <label class="field-label">제조사</label>
+                                <select class="field-select">
+                                    <option>선택하세요</option>
+                                </select>
+                            </div>
+                            <div class="field">
+                                <label class="field-label">최저가</label>
+                                <select class="field-select">
+                                    <option>선택하세요</option>
+                                    <option>100만원</option>
+                                    <option>500만원</option>
+                                    <option>1000만원</option>
+                                </select>
+                            </div>
+                            <div class="field">
+                                <label class="field-label">최고가</label>
+                                <select class="field-select">
+                                    <option>선택하세요</option>
+                                    <option>1000만원</option>
+                                    <option>3000만원</option>
+                                    <option>5000만원</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button class="search-button">검색하기</button>
+                    `;
+                } else if (tabType === 'type') {
+                    searchFields.innerHTML = `
+                        <div class="car-type-buttons">
+                            <button class="car-type-button" data-type="경차">🚗 경차</button>
+                            <button class="car-type-button" data-type="준중형">🚗 준중형</button>
+                            <button class="car-type-button" data-type="중형">🚗 중형</button>
+                            <button class="car-type-button" data-type="SUV">🚙 SUV</button>
+                            <button class="car-type-button" data-type="대형">🚙 대형</button>
+                        </div>
+                        <button class="search-button">검색하기</button>
+                    `;
+                    
+                    // 차종 버튼 클릭 이벤트 추가
+                    setTimeout(() => {
+                        const typeButtons = document.querySelectorAll('.car-type-button');
+                        typeButtons.forEach(button => {
+                            button.addEventListener('click', () => {
+                                typeButtons.forEach(b => b.classList.remove('active'));
+                                button.classList.add('active');
+                            });
+                        });
+                    }, 0);
+                }
+            });
+        });
+        
+        // 차량 슬라이더 기능
+        const carSlider = document.getElementById('carSlider');
+        const prevButton = document.getElementById('prevButton');
+        const nextButton = document.getElementById('nextButton');
+        
+        let currentSlide = 0;
+        const slidesCount = carSlider.childElementCount;
+        
+        // 슬라이드 위치 업데이트 함수
+        function updateSlidePosition() {
+            carSlider.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+        
+        // 이전 슬라이드로 이동
+        prevButton.addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + slidesCount) % slidesCount;
+            updateSlidePosition();
+        });
+        
+        // 다음 슬라이드로 이동
+        nextButton.addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % slidesCount;
+            updateSlidePosition();
+        });
+        
+        // 자동 슬라이드 기능
+        let autoSlideInterval = setInterval(() => {
+            currentSlide = (currentSlide + 1) % slidesCount;
+            updateSlidePosition();
+        }, 5000);
+        
+        // 슬라이더에 마우스 올렸을 때 자동 슬라이드 정지
+        document.querySelector('.slider-container').addEventListener('mouseenter', () => {
+            clearInterval(autoSlideInterval);
+        });
+        
+        // 슬라이더에서 마우스 나갔을 때 자동 슬라이드 재시작
+        document.querySelector('.slider-container').addEventListener('mouseleave', () => {
+            autoSlideInterval = setInterval(() => {
+                currentSlide = (currentSlide + 1) % slidesCount;
+                updateSlidePosition();
+            }, 5000);
+        });
+    </script>
+</body>
+</html>

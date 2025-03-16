@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>허위딜러 - 중고차 거래 사이트</title>
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css2?family=42dot+Sans:wght@300..800&display=swap" rel="stylesheet">
+  <!-- favicon -->
+  <link rel="icon" href="images/logo_favicon.png"/>
+  <!--css-->
+  <link href="css/maincss.css" rel="stylesheet" />
+</head>
+<body>
+  <header>
+    <!--main logo-->
+    <a href="main.html"><div class="logo">허위딜러</div></a>
+
+    <!--nav-->
+    <div class="nav-menu">
+        <a href="#" class="nav-item">내차사기</a>
+        <div class="nav-menu-small">
+          <a href="#" class="nav-item">국산</a>
+          <a href="#" class="nav-item">수입</a>
+          <a href="#" class="nav-item">전기</a>
+        </div>
+        <a href="#" class="nav-item">내차팔기</a>
+        <div class="nav-menu-small">
+          <a href="#" class="nav-item">비교견적</a>
+          <a href="#" class="nav-item">직거래</a>
+        </div>
+    </div>
+    <div class="user-menu">
+        <a href="login.html" class="">로그인</a>
+        <a href="#" class="">회원가입</a>
+    </div>
+  </header>
+
+  <section class="search-section">
+    <h1 class="main-title-h1">어떤 차를 찾으시나요?</h1>
+    <div class="search-container">
+      <input type="text" class="search-text" placeholder="모델명으로 검색">
+      <div class="search-glass">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </div>
+    </div>
+
+    <div class="search-filter">
+      <div class="tabs">
+        <button class="tab active" data-tab="direct">직접 찾기</button>
+        <button class="tab" data-tab="price">가격으로 찾기</button>
+        <button class="tab" data-tab="type">차종으로 찾기</button>
+      </div>
+
+      <div class="search-row">
+        <div class="search-field">
+          <label class="search-label">제조사</label>
+          <select class="search-control" id="">
+            <option selected="" value="">선택하세요.</option>
+            <option>현대자동차</option>
+            <option>기아</option>
+            <option>KGM</option>
+            <option>르노</option>
+            <option>쉐보레</option>
+            <option>테슬라</option>
+            <option>BYD</option>
+          </select>
+        </div>
+        
+        <div class="search-field">
+          <label class="search-label">모델</label>
+          <select class="search-control" id="">
+            <option selected="" value="">선택하세요.</option>
+            <option>그랜저</option>
+            <option>그랜저</option>
+            <option>그랜저</option>
+            <option>그랜저</option>
+            <option>그랜저</option>
+          </select>
+        </div>
+
+        <div class="search-field">
+          <label class="search-label">세부모델</label>
+          <select class="search-control" id="">
+            <option selected="" value="">선택하세요.</option>
+            <option>그랜저 (GN7) (22년 ~ 현재)</option>
+            <option>그랜저 하이브리드 (GN7) (22년 ~ 현재)</option>
+            <option>더 뉴 그랜저 IG (19년 ~ 22년)</option>
+            <option>더 뉴 그랜저 IG 하이브리드 (19년 ~ 22년)</option>
+            <option>그랜저 IG 하이브리드 (17년 ~ 19년)</option>
+          </select>
+        </div>
+      </div>
+      <div class="btn-container">
+        <button class="search-btn" type="submit" id="searchButton">
+          검색하기
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section class="popular-car-section">
+    <div class="car-slide-section">
+      <h1 class="car-section-h1">실시간 찜 많은 차량</h1>
+      <div class="car-slide-container">
+        <div class="car-slide-wrapper" id="carWrapper">
+          <!--1-->
+          <div class="slide-1">
+            <div class="car-slide-info">
+              <a href="">
+                <div class="car-card">
+                  <img src="images/car/현대자동차/sonata.png" class="car-slide-img">
+                  <div class="car-data">
+                    <div class="car-title-line">
+                      <p class="car-manufacturer">현대자동차</p>
+                      <p class="car-name">쏘나타 디 엣지</p>
+                    </div>
+                      <p class="car-price">3,500만원</p>
+                      <p class="car-info">24년 9월식 | 2,300km | 가솔린 | 대구</p>
+                  </div>
+                </div>
+              </a>
+              <a href="">
+                <div class="car-card">
+                  <img src="images/car/현대자동차/ioniq6.png" class="car-slide-img">
+                  <div class="car-data">
+                    <div class="car-title-line">
+                      <p class="car-manufacturer">현대자동차</p>
+                      <p class="car-name">아이오닉 6</p>
+                    </div>
+                    <p class="car-price">3,950만원</p>
+                    <p class="car-info">24년 3월식 | 5,500km | 전기 | 부산</p>
+                  </div>
+                </div>
+              </a>
+              <a href="">
+                <div class="car-card">
+                  <img src="images/car/기아/sportage_nq5.png" class="car-slide-img">
+                  <div class="car-data">
+                    <div class="car-title-line">
+                      <p class="car-manufacturer">기아</p>
+                      <p class="car-name">스포티지</p>
+                    </div>
+                    <p class="car-price">3,990만원</p>
+                    <p class="car-info">25년 1월식 | 500km | 가솔린 | 서울</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- 슬라이더 컨트롤 버튼 -->
+        <button class="slider-control prev-button" id="prevButton">←</button>
+        <button class="slider-control next-button" id="nextButton">→</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- footer section -->
+  <footer class="footer-section">
+    <div class="footer-logo">허위딜러</div>
+    <div class="footer-main">
+      <div class="footer-address">대구광역시 북구 칠곡중앙대로 51길</div>
+      <div class="footer-tel">Tel. 053 - 000 - 0000</div>
+      <div class="footer-copyright">Copyright &copy; 2025 허위딜러 All Rights Reserved.</div>
+    </div>
+  </footer>
+
+  <!--Java Script-->
+  <script src="/Javascript/main.js"></script>
+  <!--font awesome-->
+  <script src="https://kit.fontawesome.com/1b5a8228b3.js" crossorigin="anonymous"></script>
+</body>
+</html>

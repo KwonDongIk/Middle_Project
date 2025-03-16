@@ -1,0 +1,382 @@
+/* font-face noonnu */
+
+@font-face {
+  font-family: 'SDSamliphopangche_Outline';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts-20-12@1.0/SDSamliphopangche_Outline.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Initial setting */
+
+* {
+  font-family: "42dot Sans", sans-serif;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: #0c0c0c;
+  background-color: #f6f6f6;
+  display: flex;
+  flex-direction: column;
+}
+
+/* header nav */
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+header {
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+}
+
+.logo {
+  font-family: 'SDSamliphopangche_Outline', sans-serif;
+  font-size: 55px;
+  display: flex;
+  padding: 50px;
+}
+
+.nav-menu a {
+  font-size: 35px;
+  gap: 60px;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  padding: 50px;
+}
+
+.nav-menu-small {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.nav-menu-small a {
+  font-size: 25px;
+  color: #8a8a8a;
+}
+
+.nav-menu-small a:hover {
+  color: #000;
+}
+
+.user-menu {
+  display: flex;
+  gap: 35px;
+  padding: 50px;
+}
+
+.user-menu a {
+  background-color: #f6f6f6;
+  border: none;
+  font-size: 20px;
+  color: #8a8a8a;
+}
+
+.user-menu a:hover {
+  color: #000;
+}
+
+/* body -- main search section */
+
+.search-section {
+  padding: 100px 150px 100px 150px;
+}
+
+.search-section > .main-title-h1 {
+  font-size: 45px;
+}
+
+.search-section > .search-container > .search-text {
+  border: none;
+  width: 100%;
+  border-bottom: 5px solid #000;
+  background-color: #f6f6f6;
+  height: 85px;
+  font-size: 32px;
+  color: #000;
+  outline: none;
+  display: flex;  
+}
+
+.search-container {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.search-glass {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  margin-top: -25px;
+  right: 15px;
+  font-size: 35px;
+  cursor: pointer;
+  padding: 10px;
+  line-height: 1;
+}
+
+.search-filter {
+  padding: 50px 50px 50px 50px;
+  margin-top: 100px;
+  background-color: #FFF;
+  border-radius: 25px;
+}
+
+.search-filter > .tabs > button {
+  font-size: 36px;
+  border: none;
+  background-color: #FFF;
+  padding-bottom: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.tab.active {
+  color: #0400ff;
+}
+
+.search-row {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.search-field {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 35px;
+  flex: 1;
+  min-width: 200px;
+  padding-top: 40px;
+}
+
+.search-label {
+  font-size: 20px;
+  color: #8a8a8a;
+}
+
+.search-control {
+  font-size: 20px;
+  padding: 15px;
+}
+
+.car-type-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  padding-top: 40px;
+  padding-bottom: 33px;
+}
+
+.car-type-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background-color: #FFF;
+  cursor: pointer;
+  flex: 1;
+  min-width: 200px;
+  border: 1px solid #000;
+  padding: 15px;
+  border-radius: 15px;
+}
+
+.car-type-button > span {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.car-type-button img {
+  max-height: 65px;
+}
+
+.car-type-button[data-type="대형"] img {
+  max-height: 45px;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+}
+
+.car-type-button:hover {
+  color: #0400ff;
+  border-color: #0400ff;
+}
+
+.car-type-button.active {
+  color: #0400ff;
+  border-color: #0400ff;
+}
+
+.search-btn {
+  background-color: #000;
+  color: #FFF;
+  font-size: 20px;
+  border: none;
+  padding: 15px;
+  margin-top: 30px;
+  width: 200px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+/* 실시간 찜 많은 차량 */
+.popular-car-section {
+  padding: 0px 150px 100px 150px;
+}
+
+.car-section-h1 {
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.car-slide-section {
+  background-color: #EEE;
+  padding: 25px 50px 50px 50px;
+  border-radius: 25px;
+}
+
+.car-slide-container {
+  position: relative;
+  width: 100%;
+}
+
+.car-slide-info {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 10px 50px;
+}
+
+.car-slide-info > a > .car-card {
+  background-color: #c7c7c7;
+  padding: 50px;
+  border-radius: 18px;
+  margin: 0px 10px 0px 10px;
+}
+
+.car-slide-info > a > .car-card img {
+  height: 150px;
+}
+
+.car-data {
+  display: flex;
+  flex-direction: column;
+}
+
+.car-title-line {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+  font-size: 30px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.car-data > p {
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+}
+
+.car-title-line > p {
+  margin: 0;
+  padding: 0;
+}
+
+.car-price {
+  font-size: 24px;
+}
+
+.car-info {
+  font-size: 15px;
+  color: #6e6e6e;
+}
+
+.slider-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background-color: #c7c7c7;
+  color: #000;
+  font-weight: bold;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 10px;
+}
+
+.prev-button {
+  left: 0;
+}
+
+.next-button {
+  right: 0;
+}
+
+/* footer section */
+
+.footer-section {
+  padding: 50px;
+  border-top: 1px solid #f6f6f6;
+  background-color: #EEE;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  margin-top: auto;
+}
+
+.footer-logo {
+  font-family: 'SDSamliphopangche_Outline', sans-serif;
+  font-size: 55px;
+  display: flex;
+  padding-left: 250px;
+}
+
+.footer-main{
+  display: flex;
+  flex-direction: column;
+  padding-right: 250px;
+  gap: 8px;
+}
+
+.footer-copyright {
+  color: #adacac;
+}
