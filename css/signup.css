@@ -1,0 +1,98 @@
+* {
+    font-family: "42dot Sans", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 150vh;
+    color: #0c0c0c;
+    background-color: #f6f6f6;
+}
+
+.signup-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0;
+    min-height: auto;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 510px;
+    background: #f6f6f6;
+    border-radius: 10px;
+    padding: 35px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.9);
+}
+
+.wrapper h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.input-field {
+    margin-bottom: 10px;
+}
+
+.input-field p {
+    font-size: 23px;
+    margin-bottom: 0px;
+}
+
+.guide-text {
+    font-size: 15px !important;
+}
+  
+  .input-box {
+    height: 48px; /* 높이 축소 */
+  }
+  
+  .input-box input {
+    font-size: 15px;
+  }
+  
+  .input-box i {
+    font-size: 20px;
+  }
+  
+  /* 약관 섹션 축소 */
+  .terms-section {
+    margin: 20px 0;
+    padding: 15px;
+  }
+  
+  .terms-section h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .terms-item {
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+  
+  .terms-item input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .view-terms {
+    font-size: 13px;
+  }
+  
+  /* 버튼 크기 축소 */
+  .btn {
+    height: 48px;
+    font-size: 16px;
+  }
+  
+  .login-link {
+    margin-top: 15px;
+  }
+  
+  .login-link p {
+    font-size: 14px;
+  }
