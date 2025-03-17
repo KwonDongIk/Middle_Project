@@ -269,9 +269,21 @@ header {
   border-radius: 25px;
 }
 
+.car-slide-wrapper {
+  display: flex;
+  transition: transform 0.5s ease;
+  width: 100%;
+}
+
+.car-slide-wrapper > div[class^="slide-"] {
+  flex: 0 0 100%;
+  width: 100%;
+}
+
 .car-slide-container {
   position: relative;
   width: 100%;
+  overflow: hidden;
 }
 
 .car-slide-info {
@@ -290,6 +302,7 @@ header {
 
 .car-slide-info > a > .car-card img {
   height: 150px;
+  width: 300px;
 }
 
 .car-data {

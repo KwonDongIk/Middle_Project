@@ -1,3 +1,6 @@
+document.addEventListener('DOMContentLoaded', function() {
+
+
 let tabs = document.querySelectorAll('.tab');
 let searchFilter = document.querySelector('.search-filter');
 
@@ -135,3 +138,153 @@ function addCarTypeButtonListeners(){
         });
     })
 }
+
+
+let carWrapper = document.getElementById('carWrapper');
+let prevButton = document.getElementById('prevButton');
+let nextButton = document.getElementById('nextButton');
+let slideContainer = document.querySelector('.car-slide-container');
+
+let currentSlide = 0;
+let totalSlides = 1;
+let autoSlideInterval;
+const autoSlideDelay = 5000; // 5초마다
+
+const carData = [
+    [
+        {
+            manufacturer: '현대자동차',
+            name: '투싼',
+            price: '2,890만원',
+            info: '23년 5월식 | 5,500km | 가솔린 | 대구',
+            Image: 'images/car/현대자동차/tucson.png'
+            
+        },
+
+        {
+            manufacturer: '테슬라',
+            name: '모델 Y',
+            price: '4,700만원',
+            info: '24년 3월식 | 9,300km | 전기 | 경북 포항',
+            Image: 'images/car/테슬라/modely.png'
+        },
+
+        {
+            manufacturer: '기아',
+            name: '쏘렌토',
+            price: '3,300만원',
+            info: '24년 12월식 | 1,800km | 가솔린 | 대전',
+            Image: 'images/car/기아/the_new_sorento.png'
+        }
+    ],
+    [
+        {
+            manufacturer: '현대자동차',
+            name: '캐스퍼',
+            price: '1,000만원',
+            info: '22년 9월식 | 9,500km | 가솔린 | 대구',
+            Image: 'images/car/현대자동차/casper.png'
+            
+        },
+
+        {
+            manufacturer: '테슬라',
+            name: '모델 Y',
+            price: '4,700만원',
+            info: '24년 3월식 | 9,300km | 전기 | 경북 포항',
+            Image: 'images/car/테슬라/modely.png'
+        },
+
+        {
+            manufacturer: '현대자동차',
+            name: '싼타페',
+            price: '3,100만원',
+            info: '24년 11월식 | 3,800km | 가솔린 | 경북 구미',
+            Image: 'images/car/현대자동차/santafe.png'
+        }
+    ]
+];
+
+function createCarSlide() {
+    if(carData.length > 0) {
+        carData.forEach((slideData, index) => {
+            let slideHTML = createSlideHTML(slideData, index + 2)
+            carWrapper.innerHTML += slideHTML;
+        });
+
+        totalSlides = carData.length + 1;
+    }
+}
+
+function createSlideHTML(cars, slideNumber){
+    let carCardsHTML = '';
+
+    cars.forEach(car => {
+        carCardsHTML += `<a href="">
+                <div class="car-card">
+                  <img src="${car.Image}" class="car-slide-img">
+                  <div class="car-data">
+                    <div class="car-title-line">
+                      <p class="car-manufacturer">${car.manufacturer}</p>
+                      <p class="car-name">${car.name}</p>
+                    </div>
+                    <p class="car-price">${car.price}</p>
+                    <p class="car-info">${car.info}</p>
+                  </div>
+                </div>
+              </a>`;
+    });
+
+    return `<div class="slide-${slideNumber}">
+                <div class="car-slide-info">
+                    ${carCardsHTML}
+                </div>
+            </div>`;
+}
+
+function moveSlide(direction){
+    const totalSlides = carWrapper.children.length;
+
+    if(direction == 'next') {
+        currentSlide = (currentSlide + 1) % totalSlides;
+    } else {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+    }
+
+    updateSlidePosition();
+}
+
+function updateSlidePosition(){
+    carWrapper.style.transform = `translateX(-${currentSlide * 100}%)`;
+}
+
+function startAutoSlide(){
+    stopAutoSlide();
+    autoSlideInterval = setInterval(() => {
+        moveSlide('next');
+    }, autoSlideDelay);
+}
+
+function stopAutoSlide(){
+    if(autoSlideInterval){
+        clearInterval(autoSlideInterval);
+    }
+};
+
+prevButton.addEventListener('click', () => {
+    moveSlide('prev');
+    startAutoSlide();
+});
+
+nextButton.addEventListener('click', () => {
+    moveSlide('next');
+    startAutoSlide();
+});
+
+slideContainer.addEventListener('mouseenter', stopAutoSlide);
+slideContainer.addEventListener('mouseleave', startAutoSlide);
+
+createCarSlide();
+startAutoSlide();
+
+});

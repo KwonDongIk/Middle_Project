@@ -15,7 +15,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 30px 0;
+    padding: 100px 0;
     min-height: auto;
 }
 
@@ -34,65 +34,81 @@ body {
 }
 
 .input-field {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 .input-field p {
     font-size: 23px;
     margin-bottom: 0px;
+    font-weight: bold;
 }
 
 .guide-text {
     font-size: 15px !important;
+    margin-top: 10px;
 }
   
-  .input-box {
-    height: 48px; /* 높이 축소 */
-  }
-  
-  .input-box input {
-    font-size: 15px;
-  }
-  
-  .input-box i {
-    font-size: 20px;
-  }
-  
-  /* 약관 섹션 축소 */
-  .terms-section {
-    margin: 20px 0;
-    padding: 15px;
-  }
-  
-  .terms-section h3 {
-    font-size: 16px;
-    margin-bottom: 10px;
-  }
-  
-  .terms-item {
-    margin-bottom: 10px;
-    font-size: 14px;
-  }
-  
-  .terms-item input[type="checkbox"] {
-    width: 16px;
-    height: 16px;
-  }
-  
-  .view-terms {
-    font-size: 13px;
-  }
-  
-  /* 버튼 크기 축소 */
-  .btn {
-    height: 48px;
-    font-size: 16px;
-  }
-  
-  .login-link {
-    margin-top: 15px;
-  }
-  
-  .login-link p {
-    font-size: 14px;
-  }
+.input-box {
+  height: 48px;
+}
+
+.input-box input {
+  font-size: 15px;
+}
+
+.input-box i {
+  font-size: 20px;
+}
+
+.terms-section {
+  margin: 20px 0;
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 15px;
+}
+
+.terms-section h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.terms-item {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.terms-item input[type="checkbox"] {
+  width: 15px;
+  height: 15px;
+  accent-color: #000000;
+  margin-right: 3px;
+}
+
+.view-terms {
+  font-size: 13px;
+}
+
+.view-terms:hover {
+  color: rgba(255, 0, 0, 0.9);
+  font-weight: bold;
+}
+
+.btn {
+  height: 48px;
+  font-size: 16px;
+}
+
+.login-link {
+  font-size: 14.5px;
+  text-align: center;
+  margin: 20px 0 15px;
+}
+
+.login-link p {
+  font-size: 14px;
+}
+
+.login-link p a:hover {
+  color: rgba(255, 0, 0, 0.9);
+  font-weight: bold;
+}
