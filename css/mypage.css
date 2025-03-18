@@ -1,0 +1,139 @@
+* {
+  font-family: "42dot Sans", sans-serif;
+}
+
+body {
+  font-family: "42dot Sans", sans-serif; 
+  color: #0c0c0c;
+  background-color: #f4f3f3;
+}
+
+.main_container {
+  gap: 10%;
+  padding: 80px 100px;
+}
+
+.main_container .mypage_Title h1 {
+  font-weight: bold;
+}
+
+.main_container .mypage_Title h6 {
+  color: #9d9c9c;
+  margin-top: -10px;
+}
+
+.main_container .mypage_Title #h6_rightTitle {
+  color: #9d9c9c;
+  text-align: right;
+}
+
+.main_container .mypage_Title {
+  margin-bottom: 80px;
+}
+
+.main_container .lent_Title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main_container .lent_Title #h6_rightTitle {
+  color: #9d9c9c;
+  text-align: right;
+}
+
+.main_container .mypage_Title h1 {
+  font-size: 50px;
+}
+
+.main_container .mypage_Title > a > h6 {
+  font-size: 20px;
+  text-decoration: underline;
+}
+
+.main_container .mypage_Title  h6 {
+  font-size: 20px;
+}
+
+.main_container .lent_Title h4 {
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.main_container .lent_Title > a > h6 {
+  font-size: 20px;
+  text-decoration: underline;
+}
+
+.main_container .lent_box h4 {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.main_container .lent_box h6 {
+  text-decoration: underline;
+  font-size: 20px;
+}
+
+.main_container .lent_box {
+  border: 1px solid #2a2929;
+  border-radius: 10px;
+  height: 400px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 35px;
+}
+
+.main_container .service_box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.main_container .coupon {
+  border: 1px solid #ffffff;
+  border-radius: 10px;
+  height: 150px;
+  width: 45%;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px 0 30px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 35px;
+}
+
+.main_container .inquiry {
+  border: 1px solid #ffffff;
+  border-radius: 10px;
+  height: 150px;
+  width: 45%;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px 0 30px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 35px;
+}
+
+.main_container .help {
+  border: 1px solid #ffffff;
+  border-radius: 10px;
+  height: 670px;
+  width: 100%;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 30px 0 30px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 35px;
+}
+
+.main_container .help_title h2 {
+  font-weight: bold;
+}

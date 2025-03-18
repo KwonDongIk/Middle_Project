@@ -48,31 +48,31 @@ header {
 
 .logo {
   font-family: 'SDSamliphopangche_Outline', sans-serif;
-  font-size: 55px;
+  font-size: 3.4375rem;
   display: flex;
-  padding: 50px;
+  padding: 3.125rem;
 }
 
 .nav-menu a {
-  font-size: 35px;
-  gap: 60px;
+  font-size: 2.1875rem;
+  gap: 3.75rem;
 }
 
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: 60px;
-  padding: 50px;
+  gap: 3.75rem;
+  padding: 3.125rem;
 }
 
 .nav-menu-small {
   display: flex;
   align-items: center;
-  gap: 60px;
+  gap: 3.75rem;
 }
 
 .nav-menu-small a {
-  font-size: 25px;
+  font-size: 1.5625rem;
   color: #8a8a8a;
 }
 
@@ -82,14 +82,14 @@ header {
 
 .user-menu {
   display: flex;
-  gap: 35px;
-  padding: 50px;
+  gap: 2.1875rem;
+  padding: 3.125rem;
 }
 
 .user-menu a {
   background-color: #f6f6f6;
   border: none;
-  font-size: 20px;
+  font-size: 1.25rem;
   color: #8a8a8a;
 }
 
@@ -100,20 +100,20 @@ header {
 /* body -- main search section */
 
 .search-section {
-  padding: 100px 150px 100px 150px;
+  padding: 6.25rem 9.375rem 6.25rem 9.375rem;
 }
 
 .search-section > .main-title-h1 {
-  font-size: 45px;
+  font-size: 2.8125rem;
 }
 
 .search-section > .search-container > .search-text {
   border: none;
   width: 100%;
-  border-bottom: 5px solid #000;
+  border-bottom: .3125rem solid #000;
   background-color: #f6f6f6;
-  height: 85px;
-  font-size: 32px;
+  height: 5.3125rem;
+  font-size: 2rem;
   color: #000;
   outline: none;
   display: flex;  
@@ -130,26 +130,26 @@ header {
   display: flex;
   position: absolute;
   top: 50%;
-  margin-top: -25px;
-  right: 15px;
-  font-size: 35px;
+  margin-top: -1.5625rem;
+  right: .9375rem;
+  font-size: 2.1875rem;
   cursor: pointer;
-  padding: 10px;
+  padding: .625rem;
   line-height: 1;
 }
 
 .search-filter {
-  padding: 50px 50px 50px 50px;
-  margin-top: 100px;
+  padding: 3.125rem 3.125rem 3.125rem 3.125rem;
+  margin-top: 6.25rem;
   background-color: #FFF;
-  border-radius: 25px;
+  border-radius: 1.5625rem;
 }
 
 .search-filter > .tabs > button {
-  font-size: 36px;
+  font-size: 2.25rem;
   border: none;
   background-color: #FFF;
-  padding-bottom: 15px;
+  padding-bottom: .9375rem;
   font-weight: bold;
   cursor: pointer;
 }
@@ -157,7 +157,7 @@ header {
 .tabs {
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: .0625rem solid #e5e5e5;
 }
 
 .tab.active {
@@ -167,34 +167,34 @@ header {
 .search-row {
   display: flex;
   flex-direction: row;
-  gap: 20px;
+  gap: 1.25rem;
 }
 
 .search-field {
   display: flex;
   flex-direction: column;
-  padding-bottom: 35px;
+  padding-bottom: 2.1875rem;
   flex: 1;
-  min-width: 200px;
-  padding-top: 40px;
+  min-width: 12.5rem;
+  padding-top: 2.5rem;
 }
 
 .search-label {
-  font-size: 20px;
+  font-size: 1.25rem;
   color: #8a8a8a;
 }
 
 .search-control {
-  font-size: 20px;
-  padding: 15px;
+  font-size: 1.25rem;
+  padding: .9375rem;
 }
 
 .car-type-buttons {
   display: flex;
   flex-direction: row;
-  gap: 20px;
-  padding-top: 40px;
-  padding-bottom: 33px;
+  gap: 1.25rem;
+  padding-top: 2.5rem;
+  padding-bottom: 2.0625rem;
 }
 
 .car-type-button {
@@ -202,27 +202,27 @@ header {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: .625rem;
   background-color: #FFF;
   cursor: pointer;
   flex: 1;
-  min-width: 200px;
-  border: 1px solid #000;
-  padding: 15px;
-  border-radius: 15px;
+  min-width: 12.5rem;
+  border: .0625rem solid #000;
+  padding: .9375rem;
+  border-radius: .9375rem;
 }
 
 .car-type-button > span {
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: bold;
 }
 
 .car-type-button img {
-  max-height: 65px;
+  max-height: 4.0625rem;
 }
 
 .car-type-button[data-type="대형"] img {
-  max-height: 45px;
+  max-height: 2.8125rem;
 }
 
 .btn-container {
@@ -243,30 +243,30 @@ header {
 .search-btn {
   background-color: #000;
   color: #FFF;
-  font-size: 20px;
+  font-size: 1.25rem;
   border: none;
-  padding: 15px;
-  margin-top: 30px;
-  width: 200px;
+  padding: .9375rem;
+  margin-top: 1.875rem;
+  width: 12.5rem;
   text-align: center;
   cursor: pointer;
-  border-radius: 10px;
+  border-radius: .625rem;
 }
 
 /* 실시간 찜 많은 차량 */
 .popular-car-section {
-  padding: 0px 150px 100px 150px;
+  padding: 0rem 9.375rem 6.25rem 9.375rem;
 }
 
 .car-section-h1 {
-  font-size: 35px;
+  font-size: 2.1875rem;
   font-weight: bold;
 }
 
 .car-slide-section {
   background-color: #EEE;
-  padding: 25px 50px 50px 50px;
-  border-radius: 25px;
+  padding: 1.5625rem 3.125rem 3.125rem 3.125rem;
+  border-radius: 1.5625rem;
 }
 
 .car-slide-wrapper {
@@ -289,20 +289,20 @@ header {
 .car-slide-info {
   display: flex;
   justify-content: space-between;
-  gap: 20px;
-  padding: 10px 50px;
+  gap: 1.25rem;
+  padding: .625rem 3.125rem;
 }
 
 .car-slide-info > a > .car-card {
   background-color: #c7c7c7;
-  padding: 50px;
-  border-radius: 18px;
-  margin: 0px 10px 0px 10px;
+  padding: 3.125rem;
+  border-radius: 1.125rem;
+  margin: 0rem .625rem 0rem .625rem;
 }
 
 .car-slide-info > a > .car-card img {
-  height: 150px;
-  width: 300px;
+  height: 9.375rem;
+  width: 18.75rem;
 }
 
 .car-data {
@@ -313,11 +313,11 @@ header {
 .car-title-line {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: .625rem;
   font-weight: bold;
-  font-size: 30px;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  font-size: 1.875rem;
+  padding-top: .9375rem;
+  padding-bottom: .9375rem;
 }
 
 .car-data > p {
@@ -332,11 +332,11 @@ header {
 }
 
 .car-price {
-  font-size: 24px;
+  font-size: 1.5rem;
 }
 
 .car-info {
-  font-size: 15px;
+  font-size: .9375rem;
   color: #6e6e6e;
 }
 
@@ -344,16 +344,16 @@ header {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 50px;
-  height: 50px;
+  width: 3.125rem;
+  height: 3.125rem;
   background-color: #c7c7c7;
   color: #000;
   font-weight: bold;
   border: none;
-  font-size: 20px;
+  font-size: 1.25rem;
   cursor: pointer;
   z-index: 10;
-  border-radius: 10px;
+  border-radius: .625rem;
 }
 
 .prev-button {
@@ -367,8 +367,8 @@ header {
 /* footer section */
 
 .footer-section {
-  padding: 50px;
-  border-top: 1px solid #f6f6f6;
+  padding: 3.125rem;
+  border-top: .0625rem solid #f6f6f6;
   background-color: #EEE;
   justify-content: space-between;
   align-items: center;
@@ -378,16 +378,16 @@ header {
 
 .footer-logo {
   font-family: 'SDSamliphopangche_Outline', sans-serif;
-  font-size: 55px;
+  font-size: 3.4375rem;
   display: flex;
-  padding-left: 250px;
+  padding-left: 15.625rem;
 }
 
 .footer-main{
   display: flex;
   flex-direction: column;
-  padding-right: 250px;
-  gap: 8px;
+  padding-right: 15.625rem;
+  gap: .5rem;
 }
 
 .footer-copyright {
